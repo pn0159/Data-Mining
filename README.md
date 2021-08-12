@@ -25,3 +25,62 @@ At the core of my analysis is the building and evaluation of five different bina
 model out of the five classifiers. My goal was to predict hypertension with minimum false positive rate and maximum recall.
 
 For this project I’ve used Python and Excel for part of the data pre-processing, Tableau for some of the visualization work, and SAS Enterprise Miner OnDemand for data exploration, model building, and evaluation.
+
+# Data Preprocessing
+
+1. Interval variables
+
+2. Categorical variables
+
+3. Linear regression analysis
+
+# Classification Models
+
+1. Logistic Regression
+
+2. Decision Trees
+
+3. Random Forest
+
+4. Gradient Boosting
+
+5. Neural Networks
+
+# Model Selection
+
+For the model selection I used sensitivity (recall) and ROC AUC scores of the optimized models in the cross-validation training phase. Table 3-17 shows a comparison between the optimum model scores. My final model is gradient boosting with the hyperparameters shown below
+
+Optimal hyperparameter space for the gradient boosting model:
+
+Hyperparameter Name in SAS           Optimum Value
+
+Maximum Branch                               4
+
+Maximum Depth                                4
+
+Reuse Variable                               3
+
+Leaf Fraction                               0.01
+
+N Iterations                                400
+
+Shrinkage                                   0.01
+
+Train Proportion                             60
+
+
+The AUC of the selected model is 0.98 and the recall scores is 0.89 which shows very few missing true positive cases. To evaluate the performance of the selected model on unseen data, i applied it on the test data set that was put aside at the beginning of the model development process. The ROC plot of the application of the final model on the train and test data sets are shown below. The recall score of the test data set is 0.71. Loss of the classification performance which is expected when the model is applied on new data is in a  reasonable range.
+
+Comparison of five classification model performance metrics
+
+Model               Recall Score    AUC
+
+Logistic Regression   0.41         0.74
+
+Decision Trees        0.48         0.77
+
+Random Forest         0.65         0.88
+
+Gradient Boosting     0.89         0.98
+
+Neural Networks       0.37         0.68
