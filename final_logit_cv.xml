@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?><_ROOT_ EMVERSION="15.1" ORIENTATION="HORIZONTAL">
+<Workspace>
+<NODES>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp" X="897" Y="162" DESCRIPTION="End Groups1" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp2" X="900" Y="318" DESCRIPTION="End Groups2" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp3" X="902" Y="419" DESCRIPTION="End Groups3" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="FileImport" ID="FIMPORT" X="185" Y="316" DESCRIPTION="Import Dataser" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="SAMPLE" TOOLPREFIX="FIMPORT">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMSAMP.FIMPORT.SOURCE" ImportType="Local" GuessRows="500" Delimiter="," NameRow="Y" SkipRows="0" MaxRows="1000000" MaxCols="10000" FileType="csv" Role="TRAIN" ForceRun="N" Summarize="N" AdvancedAdvisor="N" RunAction="Train" Component="FileImport" IFileName="C:\Users\jdm0028\Downloads\Merged_Data_All_Years.csv" AccessTable="NoTableName" UserID="NoUserID" Password="NoPassword">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="BPQ020" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="BPQ080" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="BPXPULS" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DBD100" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DBQ700" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ160" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ170" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DPQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DUQ200" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="HUQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="INDHHIN2" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="KIQ022" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ080" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ160C" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ160E" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ605" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ635" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ650" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PFQ059" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIAGENDR" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIDEXPRG" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIDRETH1" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SEQN" AttributeName="ROLE" AttributeValue="ID"/>
+<DELTA Variable="SLQ050" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SMQ020" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SMQ040" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="WHQ030" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="diastolic_ave" AttributeName="ROLE" AttributeValue="REJECTED"/>
+<DELTA Variable="hypertension" AttributeName="ROLE" AttributeValue="TARGET"/>
+<DELTA Variable="hypertension" AttributeName="LEVEL" AttributeValue="BINARY"/>
+<DELTA Variable="systolic_ave" AttributeName="ROLE" AttributeValue="REJECTED"/>
+<DELTA Variable="year" AttributeName="ROLE" AttributeValue="REJECTED"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<VARIABLESETDELTA Type="EXTERNAL" Extension="txt">
+<Data><![CDATA[
+if NAME=&quot;BPQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;BPQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;BPXPULS&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DBD100&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DBQ700&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;diastolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ160&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ170&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DPQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DUQ200&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;HUQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;hypertension&quot; then do;
+ROLE=&quot;TARGET&quot;;
+LEVEL=&quot;BINARY&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;INDHHIN2&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;KIQ022&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ160C&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ160E&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ605&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ635&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ650&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PFQ059&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIAGENDR&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIDEXPRG&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIDRETH1&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SEQN&quot; then do;
+ROLE=&quot;ID&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SLQ050&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SMQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SMQ040&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;systolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;WHQ030&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;year&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+]]>
+</Data>
+</VARIABLESETDELTA>
+<DELTACODE Type="EXTERNAL" Extension="txt">
+<Data><![CDATA[
+if NAME=&quot;BPQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;BPQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;BPXPULS&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DBD100&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DBQ700&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;diastolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ160&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ170&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DPQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DUQ200&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;HUQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;hypertension&quot; then do;
+ROLE=&quot;TARGET&quot;;
+LEVEL=&quot;BINARY&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;INDHHIN2&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;KIQ022&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ160C&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ160E&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ605&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ635&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ650&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PFQ059&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIAGENDR&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIDEXPRG&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIDRETH1&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SEQN&quot; then do;
+ROLE=&quot;ID&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SLQ050&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SMQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SMQ040&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;systolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;WHQ030&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;year&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+drop DROP;
+]]>
+</Data>
+</DELTACODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp" X="571" Y="162" DESCRIPTION="Start Groups1" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="CROSSVALIDATION" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="_fold_" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="_fold_" AttributeName="REPORT" AttributeValue="Y"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp2" X="570" Y="318" DESCRIPTION="Start Groups2" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="CROSSVALIDATION" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp3" X="576" Y="419" DESCRIPTION="Start Groups3" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="STRATIFY" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMASSMT.ASSESS.CLASS" COMPONENT="ModelCompare" ID="MdlComp" X="1329" Y="320" DESCRIPTION="Model Comparison" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="ASSESS" TOOLPREFIX="MdlComp">
+<PROPERTIES NumberOfReportedLevels="1E-6" NormalizeReportingVariables="Y" DecileBin="20" LiftEpsilon="1E-6" ProfitEpsilon="1E-6" RoiEpsilon="1E-6" ScoreDistBin="20" RocChart="Y" RocEpsilon="0.01" AssessAllTargetLevels="N" SelectionData="DEFAULT" HPCriteria="DEFAULT" intervalViyaCriteria="DEFAULT" classViyaCriteria="DEFAULT" SelectionTable="TRAIN" SelectionCriteria="DEFAULT" SelectionDepth="10" NumberofBins="50" RecomputeAssess="Y" TargetName="hypertension" ModelId="MdlImp3" ModelDescription="Logit Model 3" ModelCriteria="Train: Misclassification Rate" ForceRun="N" RunAction="Train" Component="ModelCompare" StatisticUsed="_MISC_" TargetLabel="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp" X="1061" Y="162" DESCRIPTION="Logit Model 1" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="SEQN" AttributeName="USE" AttributeValue="D"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp2" X="1068" Y="317" DESCRIPTION="Logit Model 2" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="SEQN" AttributeName="USE" AttributeValue="D"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp3" X="1065" Y="417" DESCRIPTION="Logit Model 3" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="SEQN" AttributeName="USE" AttributeValue="D"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMODL.REGRESSION.CLASS" COMPONENT="Regression" ID="Reg" X="732" Y="318" DESCRIPTION="Logit 2" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Reg">
+<PROPERTIES MainEffect="Y" TwoFactor="N" Polynomial="N" PolynomialDegree="2" Terms="N" Error="LOGISTIC" LinkFunction="LOGIT" SuppressIntercept="N" InputCoding="DEVIATION" MinResourceUse="N" ModelSelection="NONE" SelectionCriterion="DEFAULT" SelectionDefault="Y" Sequential="N" SlEntry="0.05" SlStay="0.05" Start="0" Stop="0" Force="0" Hierarchy="CLASS" Rule="NONE" MaxStep="." StepOutput="N" OptimizationTechnique="DEFAULT" ModelDefaults="Y" MaxIterations="." MaxFunctionCalls="." MaxCPUTime="1 HOUR" ConvDefaults="Y" AbsConvValue="-1.34078E154" AbsFValue="0" AbsFTime="1" AbsGValue="0.00001" AbsGTime="1" AbsXValue="1E-8" AbsXTime="1" FConvValue="0" FConvTimes="1" GConvValue="1E-6" GConvTimes="1" ClParm="N" Covout="N" CovB="N" CorB="N" Simple="N" SuppressOutput="N" Details="N" PrintDesignMatrix="N" SASSPDS="N" Performance="N" ExcludedVariable="REJECT" ForceRun="N" RunAction="Train" Component="Regression" Interactions="">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS5.Reg_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="7974" DATAPRIOR="0.3599837479" TRAINPRIOR="0.3599837479" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="14177" DATAPRIOR="0.6400162521" TRAINPRIOR="0.6400162521" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS5.Reg_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes>
+<DELTA Variable="BMXBMI" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="BPQ020" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="BPQ080" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="BPXPLS" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="BPXPULS" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DBD100" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DBD895" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DBQ700" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DIQ010" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DIQ160" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DIQ170" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DPQ010" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DR1TSUGR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DUQ200" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="HUQ010" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="INDFMPIR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="INDHHIN2" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="KIQ022" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBDHDD" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSAL" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSAPSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSASSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSBU" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSCA" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSCLSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSCR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSGB" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSGL" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSIR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSKSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSNASI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSOSSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSPH" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSTP" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSTR" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSUA" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXTC" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="MCQ080" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="MCQ160C" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="MCQ160E" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PAQ605" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PAQ635" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PAQ650" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PFQ059" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="RIAGENDR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="RIDAGEYR" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="RIDEXPRG" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="RIDRETH1" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="SLQ050" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="SMQ020" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="SMQ040" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="WHQ030" AttributeName="USE" AttributeValue="N"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMODL.REGRESSION.CLASS" COMPONENT="Regression" ID="Reg2" X="725" Y="162" DESCRIPTION="Logit 1" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Reg">
+<PROPERTIES MainEffect="Y" TwoFactor="N" Polynomial="N" PolynomialDegree="2" Terms="N" Error="LOGISTIC" LinkFunction="LOGIT" SuppressIntercept="N" InputCoding="DEVIATION" MinResourceUse="N" ModelSelection="NONE" SelectionCriterion="DEFAULT" SelectionDefault="Y" Sequential="N" SlEntry="0.05" SlStay="0.05" Start="0" Stop="0" Force="0" Hierarchy="CLASS" Rule="NONE" MaxStep="." StepOutput="N" OptimizationTechnique="DEFAULT" ModelDefaults="Y" MaxIterations="." MaxFunctionCalls="." MaxCPUTime="1 HOUR" ConvDefaults="Y" AbsConvValue="-1.34078E154" AbsFValue="0" AbsFTime="1" AbsGValue="0.00001" AbsGTime="1" AbsXValue="1E-8" AbsXTime="1" FConvValue="0" FConvTimes="1" GConvValue="1E-6" GConvTimes="1" ClParm="N" Covout="N" CovB="N" CorB="N" Simple="N" SuppressOutput="N" Details="N" PrintDesignMatrix="N" SASSPDS="N" Performance="N" ExcludedVariable="REJECT" ForceRun="N" RunAction="Train" Component="Regression" Interactions="">
+<VariableProperties/>
+<EmVariableAttributes/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS5.Reg2_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="7974" DATAPRIOR="0.3638623651" TRAINPRIOR="0.3599837479" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="14177" DATAPRIOR="0.6361376349" TRAINPRIOR="0.6400162521" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS5.Reg2_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMODL.REGRESSION.CLASS" COMPONENT="Regression" ID="Reg4" X="736" Y="420" DESCRIPTION="Logit 3" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Reg">
+<PROPERTIES MainEffect="Y" TwoFactor="N" Polynomial="N" PolynomialDegree="2" Terms="N" Error="LOGISTIC" LinkFunction="LOGIT" SuppressIntercept="N" InputCoding="DEVIATION" MinResourceUse="N" ModelSelection="NONE" SelectionCriterion="DEFAULT" SelectionDefault="Y" Sequential="N" SlEntry="0.05" SlStay="0.05" Start="0" Stop="0" Force="0" Hierarchy="CLASS" Rule="NONE" MaxStep="." StepOutput="N" OptimizationTechnique="DEFAULT" ModelDefaults="Y" MaxIterations="." MaxFunctionCalls="." MaxCPUTime="1 HOUR" ConvDefaults="Y" AbsConvValue="-1.34078E154" AbsFValue="0" AbsFTime="1" AbsGValue="0.00001" AbsGTime="1" AbsXValue="1E-8" AbsXTime="1" FConvValue="0" FConvTimes="1" GConvValue="1E-6" GConvTimes="1" ClParm="N" Covout="N" CovB="N" CorB="N" Simple="N" SuppressOutput="N" Details="N" PrintDesignMatrix="N" SASSPDS="N" Performance="N" ExcludedVariable="REJECT" ForceRun="N" RunAction="Train" Component="Regression" Interactions="">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS5.Reg4_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="7974" DATAPRIOR="0.3599837479" TRAINPRIOR="0.3599837479" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="14177" DATAPRIOR="0.6400162521" TRAINPRIOR="0.6400162521" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS5.Reg4_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes>
+<DELTA Variable="BMXBMI" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="BPQ020" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="BPQ080" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="BPXPLS" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="BPXPULS" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DBD100" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DBD895" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DBQ700" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DIQ010" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DIQ160" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DIQ170" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DPQ010" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DR1TSUGR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="DUQ200" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="HUQ010" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="INDFMPIR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="INDHHIN2" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="KIQ022" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBDHDD" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSAL" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSAPSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSASSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSBU" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSCA" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSCLSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSCR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSGB" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSGL" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSIR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSKSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSNASI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSOSSI" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSPH" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSTP" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXSTR" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="LBXSUA" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="LBXTC" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="MCQ080" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="MCQ160C" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="MCQ160E" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PAQ605" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PAQ635" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PAQ650" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="PFQ059" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="RIAGENDR" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="RIDAGEYR" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="RIDEXPRG" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="RIDRETH1" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="SLQ050" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="SMQ020" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="SMQ040" AttributeName="USE" AttributeValue="N"/>
+<DELTA Variable="WHQ030" AttributeName="USE" AttributeValue="N"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMDFY.EMTRANS.CLASS" COMPONENT="Transform" ID="Trans" X="358" Y="318" DESCRIPTION="Transform Variables" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODIFY" TOOLPREFIX="Trans">
+<PROPERTIES DefaultMethod="NONE" DefaultTargetMethod="NONE" DefaultClassMethod="NONE" DefaultClassTargetMethod="NONE" Offset="1" MinOffset="Y" HideVariable="Y" RejectVariable="Y" GroupCutoff="0.1" GroupMissing="N" EmRandomSeed="12345" EmSampleSize="DEFAULT" EmSampleMethod="FIRSTN" MissingValue="USEINSEARCH" SummaryVariables="TRANSFORMED" SummaryStatistics="Y" UseMetaTransform="Y" MissingAsLevel="N" NumberofBins="VARIABLES" MaxOptimalBins="4" ForceRun="N" RunAction="Train" Component="Transform">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<INTERACTION Type="DATA">
+<Data/>
+<Metadata/>
+</INTERACTION>
+<FORMULA Type="DATA">
+<Data>
+<Obs NAME="_fold_" FORMULA="INT(DMRAN(1)*5)+1" TYPE="N" LENGTH="8" FORMAT="" ROLE="SEGMENT" LEVEL="INTERVAL" REPORT="N" LABEL="" NLEVEL="." NMISS="." MIN="." MAX="." MEAN="." STD="." SKEWNESS="." KURTOSIS="."/>
+</Data>
+<Metadata>
+<Variable NAME="Name" LABEL="Variable Name" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Formula" LABEL="Formula" LENGTH="300" FORMAT="" TYPE="C"/>
+<Variable NAME="Type" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="Length" LABEL="Length" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="Format" LABEL="Format" LENGTH="20" FORMAT="" TYPE="C"/>
+<Variable NAME="Role" LABEL="Role" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Level" LABEL="Measurement Level" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="Report" LABEL="Report" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="Label" LABEL="Label" LENGTH="200" FORMAT="" TYPE="C"/>
+<Variable NAME="nlevel" LABEL="Number of Levels" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="nmiss" LABEL="Missing" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="min" LABEL="Minimum" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="max" LABEL="Maximum" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="mean" LABEL="Mean" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="std" LABEL="Standard Deviation" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="skewness" LABEL="Skewness" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="kurtosis" LABEL="Kurtosis" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</FORMULA>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+</NODES>
+<CONNECTIONS>
+<CONNECTION FROM="FIMPORT" TO="Trans"/>
+<CONNECTION FROM="Trans" TO="Grp3"/>
+<CONNECTION FROM="Trans" TO="Grp2"/>
+<CONNECTION FROM="Trans" TO="Grp"/>
+<CONNECTION FROM="EndGrp" TO="MdlImp"/>
+<CONNECTION FROM="MdlImp" TO="MdlComp"/>
+<CONNECTION FROM="EndGrp2" TO="MdlImp2"/>
+<CONNECTION FROM="MdlImp2" TO="MdlComp"/>
+<CONNECTION FROM="EndGrp3" TO="MdlImp3"/>
+<CONNECTION FROM="MdlImp3" TO="MdlComp"/>
+<CONNECTION FROM="Grp" TO="Reg2"/>
+<CONNECTION FROM="Reg2" TO="EndGrp"/>
+<CONNECTION FROM="Grp2" TO="Reg"/>
+<CONNECTION FROM="Reg" TO="EndGrp2"/>
+<CONNECTION FROM="Grp3" TO="Reg4"/>
+<CONNECTION FROM="Reg4" TO="EndGrp3"/>
+</CONNECTIONS>
+<NOTES>
+<DATA><![CDATA[
+
+
+]]>
+</DATA>
+</NOTES>
+</Workspace>
+</_ROOT_>

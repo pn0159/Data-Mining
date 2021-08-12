@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?><_ROOT_ EMVERSION="15.1" ORIENTATION="HORIZONTAL">
+<Workspace>
+<NODES>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="FileImport" ID="FIMPORT" X="351" Y="305" DESCRIPTION="File Import" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="SAMPLE" TOOLPREFIX="FIMPORT">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMSAMP.Fimport.SOURCE" ImportType="Local" GuessRows="500" Delimiter="," NameRow="Y" SkipRows="0" MaxRows="1000000" MaxCols="10000" FileType="csv" Role="TRAIN" ForceRun="N" Summarize="N" AdvancedAdvisor="N" RunAction="Train" Component="FileImport" IFileName="D:\Personal\UNT\Courses\DSCI 5240 - Data Mining\Final Project\Data\Merged_Data_All_Years.csv" AccessTable="NoTableName" UserID="NoUserID" Password="NoPassword">
+<VariableProperties/>
+<EmVariableAttributes>
+<DELTA Variable="BPQ020" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="BPQ080" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="BPXPULS" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DBD100" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DBQ700" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ160" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ170" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DPQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DUQ200" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="HUQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="INDHHIN2" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="KIQ022" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ080" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ160C" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ160E" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ605" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ635" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ650" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PFQ059" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIAGENDR" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIDEXPRG" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIDRETH1" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SEQN" AttributeName="ROLE" AttributeValue="ID"/>
+<DELTA Variable="SEQN" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SLQ050" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SMQ020" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SMQ040" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="WHQ030" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="diastolic_ave" AttributeName="ROLE" AttributeValue="REJECTED"/>
+<DELTA Variable="hypertension" AttributeName="ROLE" AttributeValue="REJECTED"/>
+<DELTA Variable="systolic_ave" AttributeName="ROLE" AttributeValue="TARGET"/>
+</EmVariableAttributes>
+<EmTargetAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<VARIABLESETDELTA Type="EXTERNAL" Extension="txt">
+<Data><![CDATA[
+if NAME=&quot;BPQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;BPQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;BPXPULS&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DBD100&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DBQ700&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;diastolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ160&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ170&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DPQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DUQ200&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;HUQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;hypertension&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;INDHHIN2&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;KIQ022&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ160C&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ160E&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ605&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ635&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ650&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PFQ059&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIAGENDR&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIDEXPRG&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIDRETH1&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SEQN&quot; then do;
+ROLE=&quot;ID&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SLQ050&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SMQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SMQ040&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;systolic_ave&quot; then do;
+ROLE=&quot;TARGET&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;WHQ030&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+]]>
+</Data>
+</VARIABLESETDELTA>
+<DELTACODE Type="EXTERNAL" Extension="txt">
+<Data><![CDATA[
+if NAME=&quot;BPQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;BPQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;BPXPULS&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DBD100&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DBQ700&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;diastolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ160&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ170&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DPQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DUQ200&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;HUQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;hypertension&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;INDHHIN2&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;KIQ022&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ160C&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ160E&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ605&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ635&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ650&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PFQ059&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIAGENDR&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIDEXPRG&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIDRETH1&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SEQN&quot; then do;
+ROLE=&quot;ID&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SLQ050&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SMQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SMQ040&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;systolic_ave&quot; then do;
+ROLE=&quot;TARGET&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;WHQ030&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+drop DROP;
+]]>
+</Data>
+</DELTACODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMODL.REGRESSION.CLASS" COMPONENT="Regression" ID="Reg" X="599" Y="304" DESCRIPTION="Regression" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Reg">
+<PROPERTIES MainEffect="Y" TwoFactor="N" Polynomial="N" PolynomialDegree="2" Terms="N" Error="LOGISTIC" LinkFunction="LOGIT" SuppressIntercept="N" InputCoding="DEVIATION" MinResourceUse="N" ModelSelection="NONE" SelectionCriterion="DEFAULT" SelectionDefault="Y" Sequential="N" SlEntry="0.05" SlStay="0.05" Start="0" Stop="0" Force="0" Hierarchy="CLASS" Rule="NONE" MaxStep="." StepOutput="N" OptimizationTechnique="DEFAULT" ModelDefaults="Y" MaxIterations="." MaxFunctionCalls="." MaxCPUTime="1 HOUR" ConvDefaults="Y" AbsConvValue="-1.34078E154" AbsFValue="0" AbsFTime="1" AbsGValue="0.00001" AbsGTime="1" AbsXValue="1E-8" AbsXTime="1" FConvValue="0" FConvTimes="1" GConvValue="1E-6" GConvTimes="1" ClParm="N" Covout="N" CovB="N" CorB="N" Simple="N" SuppressOutput="N" Details="N" PrintDesignMatrix="N" SASSPDS="N" Performance="N" ExcludedVariable="REJECT" ForceRun="N" RunAction="Train" Component="Regression" Interactions="">
+<VariableProperties/>
+<EmVariableAttributes/>
+<EmTargetAttributes>
+<systolic_ave>
+<DecData Table="EMWS2.Reg_systolic_ave_DD">
+<Data>
+<Obs SYSTOLIC_AVE="64.66666667"/>
+<Obs SYSTOLIC_AVE="234"/>
+<Obs SYSTOLIC_AVE="121.97762328"/>
+</Data>
+<Metadata>
+<Variable NAME="systolic_ave" LABEL="" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS2.Reg_systolic_ave_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" FORMAT="" LEVEL="PROFIT" TYPE="" COST="" USE="N" MIN="." MEAN="." MAX="."/>
+<Obs _TYPE_="TARGET" VARIABLE="systolic_ave" LABEL="" FORMAT="BEST12.0" LEVEL="INTERVAL" TYPE="N" COST="" USE="" MIN="64.66666667" MEAN="121.97762328" MAX="234"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_systolic_ave" LABEL="Predicted: systolic_ave" FORMAT="" LEVEL="" TYPE="N" COST="" USE="" MIN="." MEAN="." MAX="."/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_systolic_ave" LABEL="Residual: systolic_ave" FORMAT="" LEVEL="" TYPE="N" COST="" USE="" MIN="." MEAN="." MAX="."/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="MIN" LABEL="Minimum" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="MEAN" LABEL="Mean" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="MAX" LABEL="Maximum" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecMeta>
+</systolic_ave>
+</EmTargetAttributes>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+</NODES>
+<CONNECTIONS>
+<CONNECTION FROM="FIMPORT" TO="Reg"/>
+</CONNECTIONS>
+<NOTES>
+<DATA><![CDATA[
+
+]]>
+</DATA>
+</NOTES>
+</Workspace>
+</_ROOT_>

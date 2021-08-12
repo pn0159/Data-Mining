@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8"?><_ROOT_ EMVERSION="15.1" ORIENTATION="HORIZONTAL">
+<Workspace>
+<NODES>
+<NODE CLASS="SASHELP.EMMODL.AUTONEURAL.CLASS" COMPONENT="AutoNeural" ID="AutoNeural" X="510" Y="348" DESCRIPTION="AutoNeural" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="AutoNeural">
+<PROPERTIES Architecture="SINGLE LAYER" TrainAction="SEARCH" Termination="OVERFITTING" TargetError="DEFAULT" Hidden="2" TotalHidden="30" MaxIter="8" AdjustIterations="Y" FinalTrain="Y" FinalIter="5" TotalTime="1 HOUR" Freeze="N" Direct="Y" Tanh="Y" Normal="Y" Sine="Y" Exponential="N" Identity="N" Logistic="N" Reciprocal="N" Softmax="N" Square="N" Tolerance="MEDIUM" Residuals="Y" Standardizations="N" HiddenUnits="N" outfit="" weights="" estds="" Bestds="" HistoryDs="" ForceRun="N" RunAction="Train" Component="AutoNeural">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS6.AutoNeural_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="1573" DATAPRIOR="0.3445642408" TRAINPRIOR="0.3493226738" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="2930" DATAPRIOR="0.6554357592" TRAINPRIOR="0.6506773262" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS6.AutoNeural_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes/>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="Boost" ID="Boost" X="505" Y="246" DESCRIPTION="Gradient Boosting" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Boost">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.BOOST.SOURCE" ToolType="MODEL" Iterations="50" CategoricalBins="30" IntervalBins="100" TrainProportion="60" Seed="12345" Shrinkage="0.1" LeafFraction="0.001" SplitSize="." MinCatSize="5" MaxBranch="2" MaxDepth="2" NSurrs="0" Missing="USEINSEARCH" Huber="NO" ReUseVar="1" AssessMeasure="PROFIT" NodeSize="20000" Exhaustive="5000" VarSelection="Y" Performance="DISK" SubSeries="BEST" IterationNum="1" ObsImportance="N" NumSingleImp="5" CreateHStat="N" ForceRun="N" RunAction="Train" Component="Boost" Precision="0" Measure="PROFIT" NumPairImp="0" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS6.Boost_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="7974" DATAPRIOR="0.3445642408" TRAINPRIOR="0.3599837479" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="14177" DATAPRIOR="0.6554357592" TRAINPRIOR="0.6400162521" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS6.Boost_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp" X="669" Y="43" DESCRIPTION="End Groups1" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp2" X="668" Y="152" DESCRIPTION="End Groups2" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp3" X="669" Y="245" DESCRIPTION="End Groups3" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp4" X="674" Y="347" DESCRIPTION="End Groups4" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="EndGroup" ID="EndGrp5" X="679" Y="444" DESCRIPTION="End Groups5" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="EndGrp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.ENDGP.SOURCE" ToolType="MODEL" ForceRun="N" RunAction="Train" Component="EndGroup">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="FileImport" ID="FIMPORT" X="22" Y="248" DESCRIPTION="Import Dataser" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="SAMPLE" TOOLPREFIX="FIMPORT">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMSAMP.FIMPORT.SOURCE" ImportType="Local" GuessRows="500" Delimiter="," NameRow="Y" SkipRows="0" MaxRows="1000000" MaxCols="10000" FileType="csv" Role="TRAIN" ForceRun="N" Summarize="N" AdvancedAdvisor="N" RunAction="Train" Component="FileImport" IFileName="C:\Users\J\Desktop\Merged_Data_All_Years.csv" AccessTable="NoTableName" UserID="NoUserID" Password="NoPassword">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="BPQ020" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="BPQ080" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="BPXPULS" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DBD100" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DBQ700" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ160" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DIQ170" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DPQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="DUQ200" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="HUQ010" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="INDHHIN2" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="KIQ022" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ080" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ160C" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="MCQ160E" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ605" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ635" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PAQ650" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="PFQ059" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIAGENDR" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIDEXPRG" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="RIDRETH1" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SEQN" AttributeName="ROLE" AttributeValue="ID"/>
+<DELTA Variable="SLQ050" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SMQ020" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="SMQ040" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="WHQ030" AttributeName="LEVEL" AttributeValue="NOMINAL"/>
+<DELTA Variable="diastolic_ave" AttributeName="ROLE" AttributeValue="REJECTED"/>
+<DELTA Variable="hypertension" AttributeName="ROLE" AttributeValue="TARGET"/>
+<DELTA Variable="hypertension" AttributeName="LEVEL" AttributeValue="BINARY"/>
+<DELTA Variable="systolic_ave" AttributeName="ROLE" AttributeValue="REJECTED"/>
+<DELTA Variable="year" AttributeName="ROLE" AttributeValue="REJECTED"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<VARIABLESETDELTA Type="EXTERNAL" Extension="txt">
+<Data><![CDATA[
+if NAME=&quot;BPQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;BPQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;BPXPULS&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DBD100&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DBQ700&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;diastolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ160&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DIQ170&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DPQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;DUQ200&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;HUQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;hypertension&quot; then do;
+ROLE=&quot;TARGET&quot;;
+LEVEL=&quot;BINARY&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;INDHHIN2&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;KIQ022&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ160C&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;MCQ160E&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ605&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ635&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PAQ650&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;PFQ059&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIAGENDR&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIDEXPRG&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;RIDRETH1&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SEQN&quot; then do;
+ROLE=&quot;ID&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SLQ050&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SMQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;SMQ040&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;systolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;WHQ030&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+if NAME=&quot;year&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+DROP=&quot;N&quot;;
+end;
+]]>
+</Data>
+</VARIABLESETDELTA>
+<DELTACODE Type="EXTERNAL" Extension="txt">
+<Data><![CDATA[
+if NAME=&quot;BPQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;BPQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;BPXPULS&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DBD100&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DBQ700&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;diastolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ160&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DIQ170&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DPQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;DUQ200&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;HUQ010&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;hypertension&quot; then do;
+ROLE=&quot;TARGET&quot;;
+LEVEL=&quot;BINARY&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;INDHHIN2&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;KIQ022&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ080&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ160C&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;MCQ160E&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ605&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ635&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PAQ650&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;PFQ059&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIAGENDR&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIDEXPRG&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;RIDRETH1&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SEQN&quot; then do;
+ROLE=&quot;ID&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SLQ050&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SMQ020&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;SMQ040&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;systolic_ave&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;INTERVAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;WHQ030&quot; then do;
+ROLE=&quot;INPUT&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+if NAME=&quot;year&quot; then do;
+ROLE=&quot;REJECTED&quot;;
+LEVEL=&quot;NOMINAL&quot;;
+ORDER=&quot;&quot;;
+end;
+drop DROP;
+]]>
+</Data>
+</DELTACODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp" X="349" Y="45" DESCRIPTION="Start Groups1" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="CROSSVALIDATION" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes>
+<DELTA Variable="_fold_" AttributeName="USE" AttributeValue="Y"/>
+<DELTA Variable="_fold_" AttributeName="REPORT" AttributeValue="Y"/>
+</EmVariableAttributes>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp2" X="355" Y="153" DESCRIPTION="Start Groups2" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="CROSSVALIDATION" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp3" X="349" Y="247" DESCRIPTION="Start Groups3" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="STRATIFY" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp4" X="351" Y="351" DESCRIPTION="Start Groups4" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="STRATIFY" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="StartGroup" ID="Grp5" X="351" Y="449" DESCRIPTION="Start Groups5" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="UTILITY" TOOLPREFIX="Grp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMUTIL.GP.SOURCE" ForceRun="N" TargetGroup="N" Mode="STRATIFY" SizeType="PERCENT" SizePercent="10.0" SizeObs="." RandomSeed="12345" MinimumObs="10" IndexCount="10" RunAction="Train" Component="StartGroup" DataNeeded="Y">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="HPDMForest" ID="HPDMForest" X="519" Y="445" DESCRIPTION="HP Forest" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="HPDMForest">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.HPDM.HPDMForest.SOURCE" ToolType="MODEL" ALPHA="0.05" CATBINS="30" EXHAUSTIVE="5000" LEAFSIZEMETHOD="DEFAULT" LEAFFRACTION="0.00001" LEAFSIZE="1" MAXDEPTH="50" MAXTREES="100" MINCATSIZE="5" SEED="12345" SPLITSIZE="." NUMOBSMETHOD="PERCENTAGE" TRAINFRACTION="0.6" TRAINN="." VARS_TO_TRY="." MISSING="USEINSEARCH" MINUSEINSEARCH="1" MODELING="Y" VARSELECT="Y" VIMETHOD="LOSSREDUCTION" RBATOPNUM="25" RBACUT="0.01" ForceRun="N" RunAction="Train" Component="HPDMForest">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS6.HPDMForest_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="7974" DATAPRIOR="0.3445642408" TRAINPRIOR="0.3599837479" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="14177" DATAPRIOR="0.6554357592" TRAINPRIOR="0.6400162521" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS6.HPDMForest_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMASSMT.ASSESS.CLASS" COMPONENT="ModelCompare" ID="MdlComp" X="1025" Y="242" DESCRIPTION="Model Comparison" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="ASSESS" TOOLPREFIX="MdlComp">
+<PROPERTIES NumberOfReportedLevels="1E-6" NormalizeReportingVariables="Y" DecileBin="20" LiftEpsilon="1E-6" ProfitEpsilon="1E-6" RoiEpsilon="1E-6" ScoreDistBin="20" RocChart="Y" RocEpsilon="0.01" AssessAllTargetLevels="N" SelectionData="DEFAULT" HPCriteria="DEFAULT" intervalViyaCriteria="DEFAULT" classViyaCriteria="DEFAULT" SelectionTable="TRAIN" SelectionCriteria="DEFAULT" SelectionDepth="10" NumberofBins="50" RecomputeAssess="Y" TargetName="hypertension" ModelId="MdlImp2" ModelDescription="DTree Model" ModelCriteria="Train: Misclassification Rate" ForceRun="N" RunAction="Train" Component="ModelCompare" StatisticUsed="_MISC_" TargetLabel="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp" X="833" Y="43" DESCRIPTION="Logit Model" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp2" X="831" Y="152" DESCRIPTION="DTree Model" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp3" X="832" Y="243" DESCRIPTION="GBoost Model" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp4" X="835" Y="347" DESCRIPTION="NeuralNetwork Model" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="ModelImport" ID="MdlImp5" X="838" Y="443" DESCRIPTION="RandomForest Model" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="MdlImp">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.MODELIMPORT.SOURCE" ImportType="DATA" ApplyDecisions="N" ForceRun="N" RunAction="Train" Component="ModelImport" DataNeeded="Y" ModelName="" ModelPath="">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<MAPPING Type="DATA">
+<Data/>
+<Metadata>
+<Variable NAME="level" LABEL="Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="PredictedVar" LABEL="Predicted Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ModelVar" LABEL="Modeling Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Prior" LABEL="Modeling Prior" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="PredictedLabel" LABEL="Predicted Variable Label" LENGTH="40" FORMAT="" TYPE="C"/>
+</Metadata>
+</MAPPING>
+<MODELINFO Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINFO>
+<MODELINPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELINPUT>
+<MODELOUTPUT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELOUTPUT>
+<MODELSTAT Type="DATA">
+<Data/>
+<Metadata/>
+</MODELSTAT>
+<MODELTRAINING Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTRAINING>
+<MODELTARGET Type="DATA">
+<Data/>
+<Metadata/>
+</MODELTARGET>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMODL.REGRESSION.CLASS" COMPONENT="Regression" ID="Reg" X="505" Y="44" DESCRIPTION="Regression" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Reg">
+<PROPERTIES MainEffect="Y" TwoFactor="N" Polynomial="N" PolynomialDegree="2" Terms="N" Error="LOGISTIC" LinkFunction="LOGIT" SuppressIntercept="N" InputCoding="DEVIATION" MinResourceUse="N" ModelSelection="NONE" SelectionCriterion="DEFAULT" SelectionDefault="Y" Sequential="N" SlEntry="0.05" SlStay="0.05" Start="0" Stop="0" Force="0" Hierarchy="CLASS" Rule="NONE" MaxStep="." StepOutput="N" OptimizationTechnique="DEFAULT" ModelDefaults="Y" MaxIterations="." MaxFunctionCalls="." MaxCPUTime="1 HOUR" ConvDefaults="Y" AbsConvValue="-1.34078E154" AbsFValue="0" AbsFTime="1" AbsGValue="0.00001" AbsGTime="1" AbsXValue="1E-8" AbsXTime="1" FConvValue="0" FConvTimes="1" GConvValue="1E-6" GConvTimes="1" ClParm="N" Covout="N" CovB="N" CorB="N" Simple="N" SuppressOutput="N" Details="N" PrintDesignMatrix="N" SASSPDS="N" Performance="N" ExcludedVariable="REJECT" ForceRun="N" RunAction="Train" Component="Regression" Interactions="">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS6.Reg_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="7974" DATAPRIOR="0.3599837479" TRAINPRIOR="0.3599837479" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="14177" DATAPRIOR="0.6400162521" TRAINPRIOR="0.6400162521" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS6.Reg_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes/>
+<EmFileProperties>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMMDFY.EMTRANS.CLASS" COMPONENT="Transform" ID="Trans" X="169" Y="248" DESCRIPTION="Transform Variables" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODIFY" TOOLPREFIX="Trans">
+<PROPERTIES DefaultMethod="NONE" DefaultTargetMethod="NONE" DefaultClassMethod="NONE" DefaultClassTargetMethod="NONE" Offset="1" MinOffset="Y" HideVariable="Y" RejectVariable="Y" GroupCutoff="0.1" GroupMissing="N" EmRandomSeed="12345" EmSampleSize="DEFAULT" EmSampleMethod="FIRSTN" MissingValue="USEINSEARCH" SummaryVariables="TRANSFORMED" SummaryStatistics="Y" UseMetaTransform="Y" MissingAsLevel="N" NumberofBins="VARIABLES" MaxOptimalBins="4" ForceRun="N" RunAction="Train" Component="Transform">
+<VariableProperties/>
+<EmTargetAttributes/>
+<EmVariableAttributes/>
+<EmFileProperties>
+<INTERACTION Type="DATA">
+<Data/>
+<Metadata/>
+</INTERACTION>
+<FORMULA Type="DATA">
+<Data>
+<Obs NAME="_fold_" FORMULA="INT(DMRAN(1)*5)+1" TYPE="N" LENGTH="8" FORMAT="" ROLE="SEGMENT" LEVEL="INTERVAL" REPORT="N" LABEL="" NLEVEL="." NMISS="." MIN="." MAX="." MEAN="." STD="." SKEWNESS="." KURTOSIS="."/>
+</Data>
+<Metadata>
+<Variable NAME="Name" LABEL="Variable Name" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Formula" LABEL="Formula" LENGTH="300" FORMAT="" TYPE="C"/>
+<Variable NAME="Type" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="Length" LABEL="Length" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="Format" LABEL="Format" LENGTH="20" FORMAT="" TYPE="C"/>
+<Variable NAME="Role" LABEL="Role" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="Level" LABEL="Measurement Level" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="Report" LABEL="Report" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="Label" LABEL="Label" LENGTH="200" FORMAT="" TYPE="C"/>
+<Variable NAME="nlevel" LABEL="Number of Levels" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="nmiss" LABEL="Missing" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="min" LABEL="Minimum" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="max" LABEL="Maximum" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="mean" LABEL="Mean" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="std" LABEL="Standard Deviation" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="skewness" LABEL="Skewness" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="kurtosis" LABEL="Kurtosis" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</FORMULA>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+<NODE CLASS="SASHELP.EMCORE.EXTENSION.CLASS" COMPONENT="DecisionTree" ID="Tree" X="505" Y="153" DESCRIPTION="Decision Tree" DIAGRAMID="_ROOT_" PARENTID="" TOOLTYPE="MODEL" TOOLPREFIX="Tree">
+<PROPERTIES Location="CATALOG" Catalog="SASHELP.EMMODL.TREE.SOURCE" ToolType="MODEL" TrainMode="BATCH" ImportModel="N" Freeze="N" UseMultipleTarget="N" Precision="4" IntervalCriterion="PROBF" NominalCriterion="PROBCHISQ" OrdinalCriterion="ENTROPY" SigLevel="0.2" Splitsize="." LeafSize="5" MinCatSize="5" Maxbranch="3" Maxdepth="7" Nrules="5" Nsurrs="0" MissingValue="USEINSEARCH" UseVarOnce="N" SplitPrecision="4" Subtree="ASSESSMENT" NSubtree="1" AssessMeasure="ASE" AssessPercentage="0.25" NodeSample="20000" Exhaustive="5000" Kass="Y" KassApply="BEFORE" Depth="Y" Inputs="N" NumInputs="1" VarSelection="Y" Leafid="Y" NodeRole="SEGMENT" Performance="DISK" CV="N" CVNIter="10" CVRepeat="1" CVSeed="12345" ObsImportance="N" NumSingleImp="5" UseDecision="N" UsePriors="N" ClassColorBy="PERCENTCORRECT" IntColorBy="AVG" ShowNodeId="Y" ShowValid="Y" Pred="N" Target="ALL" Count="Y" ProfitLoss="NONE" PercentCorrect="N" AVG="Y" RASE="N" CreateSample="DEFAULT" SampleMethod="RANDOM" SampleSize="10000" SampleSeed="12345" ForceRun="N" RunAction="Train" Component="DecisionTree" Criterion="DEFAULT" Dummy="N" Predict="Y" ImportedTreeData="">
+<VariableProperties/>
+<EmTargetAttributes>
+<hypertension>
+<DecData Table="EMWS6.Tree_hypertension_DD">
+<Data>
+<Obs HYPERTENSION="TRUE" COUNT="6351" DATAPRIOR="0.3638623651" TRAINPRIOR="0.3580448754" DECPRIOR="." DECISION1="1" DECISION2="0"/>
+<Obs HYPERTENSION="FALSE" COUNT="11387" DATAPRIOR="0.6361376349" TRAINPRIOR="0.6419551246" DECPRIOR="." DECISION1="0" DECISION2="1"/>
+</Data>
+<Metadata>
+<Variable NAME="hypertension" LABEL="" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="COUNT" LABEL="Level Counts" LENGTH="8" FORMAT="10." TYPE="N"/>
+<Variable NAME="DATAPRIOR" LABEL="Data Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="TRAINPRIOR" LABEL="Training Proportions" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECPRIOR" LABEL="Decision Priors" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION1" LABEL="TRUE" LENGTH="8" FORMAT="" TYPE="N"/>
+<Variable NAME="DECISION2" LABEL="FALSE" LENGTH="8" FORMAT="" TYPE="N"/>
+</Metadata>
+</DecData>
+<DecMeta Table="EMWS6.Tree_hypertension_DM">
+<Data>
+<Obs _TYPE_="MATRIX" VARIABLE="" LABEL="" LEVEL="PROFIT" EVENT="" ORDER="" FORMAT="" TYPE="" COST="" USE="N"/>
+<Obs _TYPE_="TARGET" VARIABLE="hypertension" LABEL="" LEVEL="BINARY" EVENT="TRUE" ORDER="" FORMAT="$5." TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION1" LABEL="TRUE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DECISION" VARIABLE="DECISION2" LABEL="FALSE" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="Y"/>
+<Obs _TYPE_="DATAPRIOR" VARIABLE="DATAPRIOR" LABEL="Data Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="TRAINPRIOR" VARIABLE="TRAINPRIOR" LABEL="Training Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="DECPRIOR" VARIABLE="DECPRIOR" LABEL="Decision Prior" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE="N"/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionTRUE" LABEL="Predicted: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionTRUE" LABEL="Residual: hypertension=TRUE" LEVEL="TRUE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="PREDICTED" VARIABLE="P_hypertensionFALSE" LABEL="Predicted: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="RESIDUAL" VARIABLE="R_hypertensionFALSE" LABEL="Residual: hypertension=FALSE" LEVEL="FALSE" EVENT="" ORDER="" FORMAT="" TYPE="N" COST="" USE=""/>
+<Obs _TYPE_="FROM" VARIABLE="F_hypertension" LABEL="From: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+<Obs _TYPE_="INTO" VARIABLE="I_hypertension" LABEL="Into: hypertension" LEVEL="" EVENT="" ORDER="" FORMAT="" TYPE="C" COST="" USE=""/>
+</Data>
+<Metadata>
+<Variable NAME="_TYPE_" LABEL="Type" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="VARIABLE" LABEL="Variable" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="LABEL" LABEL="Label" LENGTH="256" FORMAT="" TYPE="C"/>
+<Variable NAME="LEVEL" LABEL="Measurement Level" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="EVENT" LABEL="Target Event" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="ORDER" LABEL="Order" LENGTH="10" FORMAT="" TYPE="C"/>
+<Variable NAME="FORMAT" LABEL="Format" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="TYPE" LABEL="Type" LENGTH="1" FORMAT="" TYPE="C"/>
+<Variable NAME="COST" LABEL="Cost" LENGTH="32" FORMAT="" TYPE="C"/>
+<Variable NAME="USE" LABEL="Use" LENGTH="1" FORMAT="" TYPE="C"/>
+</Metadata>
+</DecMeta>
+</hypertension>
+</EmTargetAttributes>
+<EmVariableAttributes/>
+<EmFileProperties>
+<USERTRAINCODE Type="EXTERNAL" Extension="sas">
+<Data/>
+</USERTRAINCODE>
+<EMNOTES Type="EXTERNAL" Extension="txt">
+<Data/>
+</EMNOTES>
+</EmFileProperties>
+</PROPERTIES>
+</NODE>
+</NODES>
+<CONNECTIONS>
+<CONNECTION FROM="FIMPORT" TO="Trans"/>
+<CONNECTION FROM="Trans" TO="Grp"/>
+<CONNECTION FROM="Trans" TO="Grp2"/>
+<CONNECTION FROM="Trans" TO="Grp3"/>
+<CONNECTION FROM="Trans" TO="Grp4"/>
+<CONNECTION FROM="Trans" TO="Grp5"/>
+<CONNECTION FROM="Grp5" TO="HPDMForest"/>
+<CONNECTION FROM="Grp4" TO="AutoNeural"/>
+<CONNECTION FROM="Grp3" TO="Boost"/>
+<CONNECTION FROM="Grp2" TO="Tree"/>
+<CONNECTION FROM="Grp" TO="Reg"/>
+<CONNECTION FROM="Reg" TO="EndGrp"/>
+<CONNECTION FROM="Tree" TO="EndGrp2"/>
+<CONNECTION FROM="Boost" TO="EndGrp3"/>
+<CONNECTION FROM="AutoNeural" TO="EndGrp4"/>
+<CONNECTION FROM="HPDMForest" TO="EndGrp5"/>
+<CONNECTION FROM="EndGrp5" TO="MdlImp5"/>
+<CONNECTION FROM="EndGrp4" TO="MdlImp4"/>
+<CONNECTION FROM="EndGrp3" TO="MdlImp3"/>
+<CONNECTION FROM="EndGrp2" TO="MdlImp2"/>
+<CONNECTION FROM="EndGrp" TO="MdlImp"/>
+<CONNECTION FROM="MdlImp" TO="MdlComp"/>
+<CONNECTION FROM="MdlImp2" TO="MdlComp"/>
+<CONNECTION FROM="MdlImp3" TO="MdlComp"/>
+<CONNECTION FROM="MdlImp4" TO="MdlComp"/>
+<CONNECTION FROM="MdlImp5" TO="MdlComp"/>
+</CONNECTIONS>
+<NOTES>
+<DATA><![CDATA[
+
+
+
+
+]]>
+</DATA>
+</NOTES>
+</Workspace>
+</_ROOT_>
