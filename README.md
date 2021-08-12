@@ -48,39 +48,18 @@ For this project I’ve used Python and Excel for part of the data pre-processin
 
 # Model Selection
 
-For the model selection I used sensitivity (recall) and ROC AUC scores of the optimized models in the cross-validation training phase. Table 3-17 shows a comparison between the optimum model scores. My final model is gradient boosting with the hyperparameters shown below
+For the model selection I used sensitivity (recall) and ROC AUC scores of the optimized models in the cross-validation training phase.  My final model is gradient boosting with the hyperparameters shown below:
 
 Optimal hyperparameter space for the gradient boosting model:
 
-Hyperparameter Name in SAS           Optimum Value
+Hyperparameter Name in SAS with Optimum Value:
 
-Maximum Branch                               4
+Maximum Branch-4 , Maximum Depth-4, Reuse Variable-3, Leaf Fraction-0.01,N Iterations-400, Shrinkage-0.01, Train Proportion-60                             
 
-Maximum Depth                                4
+The AUC of the selected model is 0.98 and the recall scores is 0.89 which shows very few missing true positive cases. To evaluate the performance of the selected model on unseen data, i applied it on the test data set that was put aside at the beginning of the model development process.The recall score of the test data set is 0.71. Loss of the classification performance which is expected when the model is applied on new data is in a  reasonable range.
 
-Reuse Variable                               3
+# Summary
 
-Leaf Fraction                               0.01
-
-N Iterations                                400
-
-Shrinkage                                   0.01
-
-Train Proportion                             60
-
-
-The AUC of the selected model is 0.98 and the recall scores is 0.89 which shows very few missing true positive cases. To evaluate the performance of the selected model on unseen data, i applied it on the test data set that was put aside at the beginning of the model development process. The ROC plot of the application of the final model on the train and test data sets are shown below. The recall score of the test data set is 0.71. Loss of the classification performance which is expected when the model is applied on new data is in a  reasonable range.
-
-Comparison of five classification model performance metrics
-
-Model               Recall Score    AUC
-
-Logistic Regression   0.41         0.74
-
-Decision Trees        0.48         0.77
-
-Random Forest         0.65         0.88
-
-Gradient Boosting     0.89         0.98
-
-Neural Networks       0.37         0.68
+In this project, I’ve developed a classification model to identify people with hypertension using their health, demographic, dietary habits, and lab data. Hypertension is a primary or contributing cause of approximately half a million death in the US and it can exist in a person undetected without significant symptoms. Early identification of 
+hypertension by healthcare professionals can help physicians and patients start treatment earlier to prevent or reduce serious consequences. For this project, I’ve used five periods of NHANES data for data exploration and predictive tool building. This data set is collected by CDC and is one of the most comprehensive and representative publicly available health data sets and a principal source for tracking conditions such as hypertension in the U.S. population. The data set in this project consisted of 22,151 records, each represents one person in the surveys. My exploratory data analysis revealed interesting and useful patterns. On average 42% of the people whose doctor has told them they have high blood pressure, do not have hypertension based on their blood pressure readings in the NHANES survey. Also, 26% of those whom no doctor has ever said they have high blood pressure, have hypertension. While the underlying causes of this inconsistency should be investigated, a reliable predictive tool such as the one I have developed in this project can help healthcare professionals identify positive and negative cases more efficiently. My data also showed the habit of adding salt to food and eating poorly can increase the likelihood of hypertension. The associations of kidney problems, diabetes, smoking, low physical activity, and obesity with hypertension are also reflected in data. Also, being male and black is associated with high blood pressure. For developing a predictive tool, I’ve built and tuned five classification models in SAS EM. I’ve chose sensitivity score and AUC as my key performance indicators because missing a positive case can be significantly more expensive than misidentifying a negative case. Out of the five models, performance metrics of the Gradient Boosting model performed best, and was selected to be my final predictive model.The exploratory data analysis and predictive tool that i developed in this project can be directly used by healthcare professionals to both understand the patterns of hypertension and predict it in a faster, more reliable, and cheaper 
+fashion.
